@@ -16,9 +16,8 @@ const { title, description = "Laboratório focado em desenvolver ferramentas ind
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
+  <script is:inline>
+    tailwind = { config: {
       darkMode: 'class',
       theme: {
         extend: {
@@ -32,8 +31,9 @@ const { title, description = "Laboratório focado em desenvolver ferramentas ind
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
         }
       }
-    }
+    }};
   </script>
+  <script src="https://cdn.tailwindcss.com" is:inline></script>
   <style>
     body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; }
     .gradient-text { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(to right, #43FE9D, #10b981); }
