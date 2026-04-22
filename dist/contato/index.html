@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="pt-BR" class="scroll-smooth" data-astro-cid-5hce7sga> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contato | CreateSuite</title><meta name="description" content="Laboratório focado em desenvolver ferramentas independentes e poderosas para diversos tipos de negócios."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><script>
+    tailwind = { config: {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#43FE9D',
+            primaryHover: '#2CE585',
+            secondary: '#10b981',
+            dark: '#020617',
+            surface: '#0f172a',
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }};
+  </script><script src="https://cdn.tailwindcss.com"></script><style>body{font-family:Inter,sans-serif;background-color:#020617;color:#f8fafc}.gradient-text[data-astro-cid-5hce7sga]{background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-image:linear-gradient(to right,#43fe9d,#10b981)}.glass-panel[data-astro-cid-5hce7sga]{background:#0f172a99;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.05)}.slide-enter[data-astro-cid-5hce7sga]{opacity:1;transform:translateY(0) scale(1);transition:all .8s cubic-bezier(.4,0,.2,1)}.slide-leave[data-astro-cid-5hce7sga]{opacity:0;transform:translateY(10px) scale(.98);transition:all .8s cubic-bezier(.4,0,.2,1)}.prose[data-astro-cid-5hce7sga] h2[data-astro-cid-5hce7sga]{color:#f8fafc;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem}.prose[data-astro-cid-5hce7sga] p[data-astro-cid-5hce7sga],.prose[data-astro-cid-5hce7sga] ul[data-astro-cid-5hce7sga]{color:#94a3b8;line-height:1.75;margin-bottom:1.25rem}.prose[data-astro-cid-5hce7sga] ul[data-astro-cid-5hce7sga]{list-style-type:disc;padding-left:1.5rem}.prose[data-astro-cid-5hce7sga] strong[data-astro-cid-5hce7sga]{color:#e2e8f0}input[data-astro-cid-5hce7sga],textarea[data-astro-cid-5hce7sga]{color-scheme:dark}
+</style></head> <body class="antialiased overflow-x-hidden selection:bg-primary selection:text-slate-900" data-astro-cid-5hce7sga>  <nav class="fixed w-full z-50 glass-panel border-b border-white/10"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex items-center justify-between h-20"> <a href="/" class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"> <img src="/cs-logo.svg" alt="CreateSuite" class="h-8 w-auto"> </a> <div class="hidden md:block"> <div class="ml-10 flex items-baseline space-x-8"> <a href="/#laboratorio" class="text-slate-300 hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Laboratório</a> <a href="/#toolbox" class="text-slate-300 hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">CS Toolbox</a> <a href="/#ecossistema" class="text-slate-300 hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Aplicações</a> </div> </div> <div> <a href="https://toolbox.createsuite.app" target="_blank" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-medium rounded-full text-white bg-white/10 hover:bg-white/20 hover:scale-105 transition-all duration-200">
+Acessar Ferramentas
+</a> </div> </div> </div> </nav> <section class="relative pt-32 pb-20 min-h-screen flex items-center"> <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10"></div> <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10"> <div class="text-center mb-10"> <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Fale Conosco</h1> <p class="text-lg text-slate-400">Tem alguma dúvida, sugestão ou proposta comercial? Mande uma mensagem para a equipe do laboratório.</p> </div> <div id="feedback" class="hidden mb-8 p-4 rounded-lg text-sm font-medium border"></div> <div class="glass-panel p-8 md:p-10 rounded-2xl border border-white/10 shadow-2xl"> <form id="contactForm" class="space-y-6"> <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <div> <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Seu Nome</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-surface border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="João Silva"> </div> <div> <label for="email" class="block text-sm font-medium text-slate-300 mb-2">E-mail</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-surface border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="joao@empresa.com"> </div> </div> <div> <label for="subject" class="block text-sm font-medium text-slate-300 mb-2">Assunto</label> <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 rounded-lg bg-surface border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="Como podemos ajudar?"> </div> <div> <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Sua Mensagem</label> <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg bg-surface border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none" placeholder="Escreva sua mensagem aqui..."></textarea> </div> <button type="submit" id="submitBtn" class="w-full py-4 text-base font-bold rounded-lg text-slate-900 bg-primary hover:bg-primaryHover transition-all duration-200 shadow-lg shadow-primary/20 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0">
+Enviar Mensagem
+</button> </form> </div> </div> </section> <footer class="border-t border-white/10 bg-dark pt-16 pb-8 mt-12"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex flex-col md:flex-row justify-between items-center gap-6"> <div class="flex items-center gap-3"> <img src="/cs-logo.svg" alt="CreateSuite" class="h-8 w-auto"> </div> <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-400"> <a href="https://toolbox.createsuite.app" class="hover:text-white transition-colors">Toolbox</a> <a href="https://leads.createsuite.app" class="hover:text-white transition-colors">Leads</a> <a href="https://office.createsuite.app" class="hover:text-white transition-colors">Office</a> <a href="https://cowork.createsuite.app" class="hover:text-white transition-colors">Cowork</a> <a href="https://codeviewr.app" class="hover:text-white transition-colors">CodeViewr</a> <a href="/privacidade" class="hover:text-white transition-colors">Política de Privacidade</a> <a href="/contato" class="hover:text-white transition-colors">Contato</a> </div> </div> <div class="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4"> <p class="text-sm text-slate-500">&copy; 2026 CreateSuite Lab. Todos os direitos reservados.</p> </div> </div> </footer>  </body></html> <script>(function(){const WEBHOOK_URL = "https://n8n.createsuite.cloud/webhook/contact";
+
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const feedback = document.getElementById('feedback');
+    btn.disabled = true; btn.textContent = 'Enviando...';
+    feedback.className = 'hidden mb-8 p-4 rounded-lg text-sm font-medium border';
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          subject: document.getElementById('subject').value,
+          message: document.getElementById('message').value,
+        }),
+      });
+      if (res.ok) {
+        feedback.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+        feedback.className = 'mb-8 p-4 rounded-lg text-sm font-medium border bg-emerald-500/10 border-emerald-500/50 text-emerald-400';
+        document.getElementById('contactForm').reset();
+      } else { throw new Error(); }
+    } catch {
+      feedback.textContent = 'Ocorreu um erro ao enviar. Tente novamente ou contate contact@createsuite.app';
+      feedback.className = 'mb-8 p-4 rounded-lg text-sm font-medium border bg-red-500/10 border-red-500/50 text-red-400';
+    } finally {
+      btn.disabled = false; btn.textContent = 'Enviar Mensagem';
+      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+})();</script>

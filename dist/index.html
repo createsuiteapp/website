@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateSuite | O Ecossistema Definitivo de Aplicações Web</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#43FE9D', // Brand Green
+                        primaryHover: '#2CE585', // Slightly darker for hover
+                        secondary: '#10b981', // Emerald 500 for gradients
+                        dark: '#020617', // Slate 950
+                        surface: '#0f172a', // Slate 900
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #43FE9D, #10b981);
+        }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .slide-enter {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .slide-leave {
+            opacity: 0;
+            transform: translateY(10px) scale(0.98);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3 cursor-pointer">
+                    <img src="cs-logo.svg" alt="CreateSuite" class="h-8 w-auto" onerror="this.outerHTML='<div class=\'flex items-center justify-center w-8 h-8 rounded-lg bg-[#43FE9D]/20 text-[#43FE9D] font-bold text-xl tracking-tighter\'>CS</div> <span class=\'text-xl font-bold tracking-tight\'><span class=\'text-[#43FE9D]\'>CREATE</span><span class=\'text-white\'>SUITE</span></span>'"/>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#laboratorio" class="text-slate-300 hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Laboratório</a>
+                        <a href="#toolbox" class="text-slate-300 hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">CS Toolbox</a>
+                        <a href="#ecossistema" class="text-slate-300 hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Aplicações</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://toolbox.createsuite.app" target="_blank" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-medium rounded-full text-white bg-white/10 hover:bg-white/20 hover:scale-105 transition-all duration-200">
+                        Acessar Ferramentas
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-[600px] h-[400px] bg-secondary/10 rounded-full blur-[100px] -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-300 mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-primary"></span>
+                        Laboratório de Inovação Contínua
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                        Soluções Úteis para <span class="gradient-text">Vários Negócios</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        CreateSuite não é apenas uma suíte, é um laboratório focado em desenvolver ferramentas independentes e poderosas para diversos tipos de negócios. Descubra soluções projetadas para máxima performance.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://toolbox.createsuite.app" target="_blank" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-full text-slate-900 bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-200">
+                            Explorar CS Toolbox Grátis
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        </a>
+                        <a href="#ecossistema" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-full text-slate-300 glass-panel hover:bg-white/10 hover:text-white transition-all duration-200">
+                            Ver Aplicações
+                        </a>
+                    </div>
+                    
+                    <div class="mt-10 flex items-center justify-center lg:justify-start gap-4 text-sm text-slate-500">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-dark"></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-600 border-2 border-dark"></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-500 border-2 border-dark"></div>
+                        </div>
+                        <p>Junte-se à comunidade de inovadores</p>
+                    </div>
+                </div>
+
+                <!-- Hero Animation / Showcase Window -->
+                <div class="relative mx-auto w-full max-w-lg lg:max-w-none perspective-1000 z-10 mt-12 lg:mt-0">
+                    <div class="relative rounded-2xl bg-surface border border-white/10 shadow-2xl shadow-primary/10 overflow-hidden aspect-[4/3] sm:aspect-video lg:aspect-[4/3] transform transition-transform duration-500 hover:rotate-0 lg:-rotate-2">
+                        <!-- Browser Header -->
+                        <div class="flex items-center px-4 py-3 bg-white/5 border-b border-white/5">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                            </div>
+                            <div class="mx-auto px-4 py-1 rounded-md bg-dark/50 border border-white/5 text-xs text-slate-400 font-mono w-1/2 text-center" id="browser-url">
+                                toolbox.createsuite.app
+                            </div>
+                        </div>
+                        
+                        <!-- Slides Container -->
+                        <div class="relative w-full h-[calc(100%-48px)] bg-dark overflow-hidden" id="app-slider">
+                            
+                            <!-- Slide 1: Toolbox -->
+                            <div class="absolute inset-0 p-6 flex flex-col slide-enter z-20" id="slide-0">
+                                <div class="flex justify-between items-center mb-6">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-8 h-8 rounded bg-primary/20 flex items-center justify-center text-primary"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
+                                        <span class="font-bold text-white">CS Toolbox</span>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 h-full">
+                                    <div class="bg-white/5 rounded-lg border border-white/5 p-4 flex flex-col justify-center items-center text-center gap-2">
+                                        <div class="w-10 h-10 rounded-full bg-primary/20 mb-2"></div>
+                                        <div class="h-2 w-16 bg-white/10 rounded"></div>
+                                        <div class="h-2 w-24 bg-white/5 rounded"></div>
+                                    </div>
+                                    <div class="bg-white/5 rounded-lg border border-white/5 p-4 flex flex-col justify-center items-center text-center gap-2">
+                                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 mb-2"></div>
+                                        <div class="h-2 w-16 bg-white/10 rounded"></div>
+                                        <div class="h-2 w-24 bg-white/5 rounded"></div>
+                                    </div>
+                                    <div class="bg-white/5 rounded-lg border border-white/5 p-4 flex flex-col justify-center items-center text-center gap-2">
+                                        <div class="w-10 h-10 rounded-full bg-teal-500/20 mb-2"></div>
+                                        <div class="h-2 w-16 bg-white/10 rounded"></div>
+                                        <div class="h-2 w-24 bg-white/5 rounded"></div>
+                                    </div>
+                                    <div class="bg-white/5 rounded-lg border border-white/5 p-4 flex flex-col justify-center items-center text-center gap-2">
+                                        <div class="w-10 h-10 rounded-full bg-cyan-500/20 mb-2"></div>
+                                        <div class="h-2 w-16 bg-white/10 rounded"></div>
+                                        <div class="h-2 w-24 bg-white/5 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Leads -->
+                            <div class="absolute inset-0 p-6 flex flex-col slide-leave z-10" id="slide-1">
+                                <div class="flex justify-between items-center mb-6">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-8 h-8 rounded bg-blue-500/20 flex items-center justify-center text-blue-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
+                                        <span class="font-bold text-white">CS Leads</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1 bg-white/5 border border-white/5 rounded-lg p-4 flex items-end gap-2">
+                                    <div class="w-1/6 bg-blue-500/40 rounded-t-md h-1/4"></div>
+                                    <div class="w-1/6 bg-blue-500/60 rounded-t-md h-2/4"></div>
+                                    <div class="w-1/6 bg-blue-500/80 rounded-t-md h-1/3"></div>
+                                    <div class="w-1/6 bg-blue-400 rounded-t-md h-3/4"></div>
+                                    <div class="w-1/6 bg-blue-500/90 rounded-t-md h-2/3"></div>
+                                    <div class="w-1/6 bg-blue-300 rounded-t-md h-full relative">
+                                        <div class="absolute -top-3 -right-2 w-3 h-3 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)]"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Office -->
+                            <div class="absolute inset-0 p-6 flex flex-col slide-leave z-10" id="slide-2">
+                                <div class="flex justify-between items-center mb-6">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-8 h-8 rounded bg-emerald-500/20 flex items-center justify-center text-emerald-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
+                                        <span class="font-bold text-white">CS Office</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1 flex gap-4">
+                                    <div class="w-1/3 bg-white/5 border border-white/5 rounded-lg p-3 space-y-3">
+                                        <div class="h-2 w-1/2 bg-white/20 rounded"></div>
+                                        <div class="h-16 bg-white/10 rounded"></div>
+                                        <div class="h-16 bg-white/10 rounded"></div>
+                                    </div>
+                                    <div class="w-1/3 bg-white/5 border border-white/5 rounded-lg p-3 space-y-3">
+                                        <div class="h-2 w-1/2 bg-white/20 rounded"></div>
+                                        <div class="h-24 bg-white/10 rounded"></div>
+                                    </div>
+                                    <div class="w-1/3 bg-white/5 border border-white/5 rounded-lg p-3 space-y-3">
+                                        <div class="h-2 w-1/2 bg-white/20 rounded"></div>
+                                        <div class="h-16 bg-white/10 rounded border border-emerald-500/50 relative">
+                                            <div class="absolute right-2 top-2 w-2 h-2 rounded-full bg-emerald-400"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4: Cowork -->
+                            <div class="absolute inset-0 p-6 flex flex-col slide-leave z-10" id="slide-3">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-8 h-8 rounded bg-sky-500/20 flex items-center justify-center text-sky-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg></div>
+                                        <span class="font-bold text-white">CS Cowork</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1 flex gap-4">
+                                    <div class="w-2/3 bg-white/5 border border-white/5 rounded-lg relative overflow-hidden flex items-center justify-center">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-sky-900/40 to-dark/80"></div>
+                                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm z-10">
+                                            <div class="w-8 h-8 rounded-full bg-sky-500/50"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-1/3 flex flex-col gap-2">
+                                        <div class="flex-1 bg-white/5 border border-white/5 rounded-lg p-2">
+                                            <div class="flex items-center gap-2 mb-2">
+                                                <div class="w-4 h-4 rounded-full bg-white/20"></div>
+                                                <div class="h-1.5 w-12 bg-white/20 rounded"></div>
+                                            </div>
+                                            <div class="h-1.5 w-full bg-white/10 rounded mb-1"></div>
+                                            <div class="h-1.5 w-3/4 bg-white/10 rounded"></div>
+                                        </div>
+                                        <div class="flex-1 bg-white/5 border border-white/5 rounded-lg p-2">
+                                            <div class="flex items-center gap-2 mb-2">
+                                                <div class="w-4 h-4 rounded-full bg-sky-400/50"></div>
+                                                <div class="h-1.5 w-12 bg-sky-400/50 rounded"></div>
+                                            </div>
+                                            <div class="h-1.5 w-full bg-sky-400/20 rounded mb-1"></div>
+                                            <div class="h-1.5 w-2/3 bg-sky-400/20 rounded"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 5: CodeViewr -->
+                            <div class="absolute inset-0 p-6 flex flex-col slide-leave z-10" id="slide-4">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-8 h-8 rounded bg-fuchsia-500/20 flex items-center justify-center text-fuchsia-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
+                                        <span class="font-bold text-white">CodeViewr</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1 flex gap-4">
+                                    <div class="w-1/2 bg-black/50 border border-white/5 rounded-lg p-3 font-mono text-[10px] leading-relaxed flex flex-col gap-1 text-slate-300">
+                                        <div class="text-pink-400">&lt;div <span class="text-green-300">class</span>="<span class="text-yellow-300">editor</span>"&gt;</div>
+                                        <div class="pl-3 text-blue-400">&lt;h1&gt;<span class="text-white">CodeViewr</span>&lt;/h1&gt;</div>
+                                        <div class="pl-3 text-slate-500">&lt;!-- Code --&gt;</div>
+                                        <div class="text-pink-400">&lt;/div&gt;</div>
+                                    </div>
+                                    <div class="w-1/2 bg-white/5 border border-white/5 rounded-lg flex items-center justify-center relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-tr from-fuchsia-900/30 to-dark/80"></div>
+                                        <div class="w-16 h-12 border border-white/20 rounded bg-dark/80 backdrop-blur flex items-center justify-center z-10 shadow-xl">
+                                            <div class="w-8 h-2 bg-fuchsia-500/50 rounded"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <!-- App Indicators -->
+                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 bg-dark/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                        <button class="w-2 h-2 rounded-full bg-white transition-all duration-300 indicator-btn" data-target="0"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 indicator-btn" data-target="1"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 indicator-btn" data-target="2"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 indicator-btn" data-target="3"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 indicator-btn" data-target="4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CS Toolbox Authority Section -->
+    <section id="toolbox" class="py-24 relative bg-surface/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="absolute inset-0 bg-primary/10 blur-[100px] rounded-full"></div>
+                    <div class="relative glass-panel rounded-2xl p-8 border border-white/10">
+                        <div class="flex items-center gap-4 mb-8 pb-8 border-b border-white/10">
+                            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/20">
+                                <svg class="w-8 h-8 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">CS Toolbox</h3>
+                                <p class="text-slate-400">O cinto de utilidades definitivo</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Coleção Crescente de Ferramentas</h4>
+                                    <p class="text-sm text-slate-400 mt-1">De formatadores de código a geradores de dados, tudo em um só lugar sem precisar instalar nada.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">100% Gratuito</h4>
+                                    <p class="text-sm text-slate-400 mt-1">Acreditamos na honestidade e uso responsável pela comunidade. Sem paywalls escondidos.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Construído para Performance</h4>
+                                    <p class="text-sm text-slate-400 mt-1">Execução no lado do cliente sempre que possível, garantindo velocidade e privacidade para seus dados.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-8 border-t border-white/10">
+                            <a href="https://toolbox.createsuite.app" target="_blank" class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-dark bg-white hover:bg-slate-100 transition-colors">
+                                Acessar CS Toolbox Agora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Apoiado por uma <span class="gradient-text">Comunidade</span> de Especialistas</h2>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                        No coração da CreateSuite está o <strong>CS Toolbox</strong>. Nós o construímos para ser o padrão ouro em utilitários web diários. 
+                        Hoje, é a escolha número um para desenvolvedores, designers e criadores de conteúdo que valorizam seu tempo.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-12">
+                        <div class="border-l-2 border-primary pl-4">
+                            <div class="text-4xl font-extrabold text-white mb-1">+100</div>
+                            <div class="text-sm text-slate-400 font-medium uppercase tracking-wider">Ferramentas Ativas</div>
+                        </div>
+                        <div class="border-l-2 border-secondary pl-4">
+                            <div class="text-4xl font-extrabold text-white mb-1">0ms</div>
+                            <div class="text-sm text-slate-400 font-medium uppercase tracking-wider">Atraso de Configuração</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-dark bg-slate-800" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2343FE9D' width='100' height='100'/><text fill='black' x='50' y='55' font-size='40' text-anchor='middle' font-family='sans-serif'>D</text></svg>" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-dark bg-slate-800" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2310b981' width='100' height='100'/><text fill='white' x='50' y='55' font-size='40' text-anchor='middle' font-family='sans-serif'>A</text></svg>" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-dark bg-slate-800" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23059669' width='100' height='100'/><text fill='white' x='50' y='55' font-size='40' text-anchor='middle' font-family='sans-serif'>M</text></svg>" alt="User">
+                        </div>
+                        <span class="text-sm text-slate-300">"Configurei como minha página inicial no navegador."</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Grid Ecosystem -->
+    <section id="ecossistema" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Soluções <span class="gradient-text">CreateSuite</span></h2>
+                <p class="text-lg text-slate-400">
+                    O laboratório não para. Conheça as aplicações desenvolvidas para cobrir necessidades específicas de diversos tipos de negócios.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- CS Leads -->
+                <a href="https://leads.createsuite.app" target="_blank" class="group relative bg-surface border border-white/5 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-1 block overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">CS Leads</h3>
+                    <p class="text-slate-400 text-sm mb-4">CRM inteligente com prospecção via Google Maps, captura via API para alto volume e controle completo do funil de vendas.</p>
+                    <div class="flex items-center text-blue-400 text-sm font-medium">
+                        Acessar Aplicação <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
+
+                <!-- CS Office -->
+                <a href="https://office.createsuite.app" target="_blank" class="group relative bg-surface border border-white/5 rounded-2xl p-6 hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 block overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">CS Office</h3>
+                    <p class="text-slate-400 text-sm mb-4">Escritório virtual completo para profissionais liberais. Inclui secretária virtual (Bot), emissão de NFS-e, agendamento e automações.</p>
+                    <div class="flex items-center text-emerald-400 text-sm font-medium">
+                        Acessar Aplicação <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
+
+                <!-- CS Cowork -->
+                <a href="https://cowork.createsuite.app" target="_blank" class="group relative bg-surface border border-white/5 rounded-2xl p-6 hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1 block overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 rounded-xl bg-sky-500/10 flex items-center justify-center mb-6 text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">CS Cowork</h3>
+                    <p class="text-slate-400 text-sm mb-4">Gestão completa para Espaços de Coworking. Controle de espaços, reservas online, interface para totens internos, mural e portal de membros.</p>
+                    <div class="flex items-center text-sky-400 text-sm font-medium">
+                        Acessar Aplicação <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
+
+                <!-- CodeViewr -->
+                <a href="https://codeviewr.app" target="_blank" class="group relative bg-surface border border-white/5 rounded-2xl p-6 hover:border-fuchsia-500/50 transition-all duration-300 hover:-translate-y-1 block overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 rounded-xl bg-fuchsia-500/10 flex items-center justify-center mb-6 text-fuchsia-400 group-hover:bg-fuchsia-500 group-hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">CodeViewr</h3>
+                    <p class="text-slate-400 text-sm mb-4">Editor HTML, CSS e JavaScript online. Simplifique o processo de desenvolvimento e testes de código front-end em tempo real.</p>
+                    <div class="flex items-center text-fuchsia-400 text-sm font-medium">
+                        Acessar Aplicação <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-dark pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="cs-logo.svg" alt="CreateSuite" class="h-8 w-auto" onerror="this.outerHTML='<div class=\'flex items-center justify-center w-8 h-8 rounded-lg bg-[#43FE9D]/20 text-[#43FE9D] font-bold text-xl tracking-tighter\'>CS</div> <span class=\'text-xl font-bold tracking-tight\'><span class=\'text-[#43FE9D]\'>CREATE</span><span class=\'text-white\'>SUITE</span></span>'"/>
+                </div>
+                <div class="flex space-x-6 text-sm text-slate-400">
+                    <a href="https://toolbox.createsuite.app" class="hover:text-white transition-colors">Toolbox</a>
+                    <a href="https://leads.createsuite.app" class="hover:text-white transition-colors">Leads</a>
+                    <a href="https://office.createsuite.app" class="hover:text-white transition-colors">Office</a>
+                    <a href="https://cowork.createsuite.app" class="hover:text-white transition-colors">Cowork</a>
+                    <a href="https://codeviewr.app" class="hover:text-white transition-colors">CodeViewr</a>
+                    <a href="/privacidade" class="hover:text-white transition-colors">Política de Privacidade</a>
+                    <a href="/contato" class="hover:text-white transition-colors">Contato</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-500">
+                    &copy; <script>document.write(new Date().getFullYear())</script> CreateSuite Lab. Todos os direitos reservados.
+                </p>                
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full z-50 transform translate-y-full transition-transform duration-500 ease-in-out bg-surface/95 backdrop-blur-md border-t border-white/10 p-4 sm:p-6 hidden">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-slate-300 flex-1">
+                Utilizamos cookies para melhorar a sua experiência, analisar o tráfego e personalizar conteúdo. Ao continuar a navegar, concorda com a nossa 
+                <a href="/privacidade" class="text-primary hover:text-primaryHover underline transition-colors">Política de Privacidade</a>.
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+                <button id="btn-customize-cookies" class="w-full sm:w-auto px-5 py-2.5 text-sm font-medium rounded-lg text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">Personalizar</button>
+                <button id="btn-accept-all-cookies" class="w-full sm:w-auto px-5 py-2.5 text-sm font-bold rounded-lg text-slate-900 bg-primary hover:bg-primaryHover transition-colors shadow-lg shadow-primary/20">Aceitar Todos</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Modal -->
+    <div id="cookie-modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-dark/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 hidden">
+        <div class="bg-surface border border-white/10 rounded-2xl w-full max-w-lg shadow-2xl transform scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]" id="cookie-modal-content">
+            <!-- Header -->
+            <div class="p-6 border-b border-white/10 flex justify-between items-center shrink-0">
+                <h3 class="text-xl font-bold text-white">Preferências de Cookies</h3>
+                <button id="btn-close-modal" class="text-slate-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <!-- Body -->
+            <div class="p-6 space-y-6 overflow-y-auto">
+                <!-- Necessary -->
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <h4 class="text-white font-medium mb-1 text-base">Estritamente Necessários</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Essenciais para o funcionamento do site e da plataforma. Não podem ser desativados nos nossos sistemas.</p>
+                    </div>
+                    <div class="shrink-0 mt-1">
+                        <label class="relative inline-flex items-center cursor-not-allowed">
+                            <input type="checkbox" checked disabled class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary/50 opacity-70"></div>
+                        </label>
+                    </div>
+                </div>
+                <!-- Analytics -->
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <h4 class="text-white font-medium mb-1 text-base">Desempenho e Analíticos</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Permitem contar visitas e fontes de tráfego, para que possamos medir e melhorar o desempenho do nosso site.</p>
+                    </div>
+                    <div class="shrink-0 mt-1">
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-analytics" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary hover:bg-primaryHover transition-colors"></div>
+                        </label>
+                    </div>
+                </div>
+                <!-- Marketing -->
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <h4 class="text-white font-medium mb-1 text-base">Marketing e Publicidade</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Usados para acompanhar os visitantes pelos sites. A intenção é exibir anúncios relevantes e apelativos.</p>
+                    </div>
+                    <div class="shrink-0 mt-1">
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-marketing" class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary hover:bg-primaryHover transition-colors"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="p-6 border-t border-white/10 flex justify-end gap-3 bg-white/5 rounded-b-2xl shrink-0">
+                <button id="btn-save-preferences" class="w-full sm:w-auto px-6 py-2.5 text-sm font-bold rounded-lg text-slate-900 bg-primary hover:bg-primaryHover transition-colors shadow-lg shadow-primary/20">Guardar Preferências</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logic for Hero Slide Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urls = [
+                'toolbox.createsuite.app',
+                'leads.createsuite.app',
+                'office.createsuite.app',
+                'cowork.createsuite.app',
+                'codeviewr.app'
+            ];
+            const urlDisplay = document.getElementById('browser-url');
+            const totalSlides = 5;
+            let currentSlide = 0;
+            const indicators = document.querySelectorAll('.indicator-btn');
+
+            function goToSlide(index) {
+                // Hide current
+                const currentEl = document.getElementById(`slide-${currentSlide}`);
+                currentEl.classList.remove('slide-enter', 'z-20');
+                currentEl.classList.add('slide-leave', 'z-10');
+                indicators[currentSlide].classList.remove('bg-white');
+                indicators[currentSlide].classList.add('bg-white/30');
+
+                // Update index
+                currentSlide = index;
+
+                // Show new
+                const nextEl = document.getElementById(`slide-${currentSlide}`);
+                nextEl.classList.remove('slide-leave', 'z-10');
+                nextEl.classList.add('slide-enter', 'z-20');
+                indicators[currentSlide].classList.remove('bg-white/30');
+                indicators[currentSlide].classList.add('bg-white');
+                
+                // Update URL Text with slight fade effect
+                urlDisplay.style.opacity = '0';
+                setTimeout(() => {
+                    urlDisplay.textContent = urls[currentSlide];
+                    urlDisplay.style.opacity = '1';
+                }, 300);
+            }
+
+            function nextSlide() {
+                let next = (currentSlide + 1) % totalSlides;
+                goToSlide(next);
+            }
+
+            let slideInterval = setInterval(nextSlide, 4000);
+
+            // Click interaction for indicators
+            indicators.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    clearInterval(slideInterval);
+                    const target = parseInt(e.target.getAttribute('data-target'));
+                    if(target !== currentSlide) {
+                        goToSlide(target);
+                    }
+                    slideInterval = setInterval(nextSlide, 4000);
+                });
+            });
+
+            // --- Cookie Consent Logic ---
+            const cookieBanner = document.getElementById('cookie-banner');
+            const cookieModal = document.getElementById('cookie-modal');
+            const cookieModalContent = document.getElementById('cookie-modal-content');
+            const btnAcceptAll = document.getElementById('btn-accept-all-cookies');
+            const btnCustomize = document.getElementById('btn-customize-cookies');
+            const btnSavePreferences = document.getElementById('btn-save-preferences');
+            const btnCloseModal = document.getElementById('btn-close-modal');
+            
+            const toggleAnalytics = document.getElementById('toggle-analytics');
+            const toggleMarketing = document.getElementById('toggle-marketing');
+
+            const COOKIE_NAME = 'cs_cookie_consent';
+
+            function checkCookieConsent() {
+                const consent = localStorage.getItem(COOKIE_NAME);
+                if (!consent) {
+                    cookieBanner.classList.remove('hidden');
+                    // Pequeno delay para a transição funcionar
+                    setTimeout(() => {
+                        cookieBanner.classList.remove('translate-y-full');
+                    }, 50);
+                }
+            }
+
+            function hideBanner() {
+                cookieBanner.classList.add('translate-y-full');
+                setTimeout(() => {
+                    cookieBanner.classList.add('hidden');
+                }, 500);
+            }
+
+            function openModal() {
+                cookieModal.classList.remove('hidden');
+                setTimeout(() => {
+                    cookieModal.classList.remove('opacity-0', 'pointer-events-none');
+                    cookieModalContent.classList.remove('scale-95');
+                }, 10);
+                
+                const consent = JSON.parse(localStorage.getItem(COOKIE_NAME) || '{}');
+                toggleAnalytics.checked = consent.analytics !== false; 
+                toggleMarketing.checked = consent.marketing === true;
+            }
+
+            function closeModal() {
+                cookieModal.classList.add('opacity-0', 'pointer-events-none');
+                cookieModalContent.classList.add('scale-95');
+                setTimeout(() => {
+                    cookieModal.classList.add('hidden');
+                }, 300);
+            }
+
+            function saveConsent(preferences) {
+                localStorage.setItem(COOKIE_NAME, JSON.stringify(preferences));
+                hideBanner();
+                closeModal();
+            }
+
+            btnAcceptAll.addEventListener('click', () => {
+                saveConsent({ necessary: true, analytics: true, marketing: true });
+            });
+
+            btnCustomize.addEventListener('click', openModal);
+            btnCloseModal.addEventListener('click', closeModal);
+
+            btnSavePreferences.addEventListener('click', () => {
+                saveConsent({
+                    necessary: true,
+                    analytics: toggleAnalytics.checked,
+                    marketing: toggleMarketing.checked
+                });
+            });
+
+            cookieModal.addEventListener('click', (e) => {
+                if (e.target === cookieModal) closeModal();
+            });
+
+            checkCookieConsent();
+        });
+    </script>
+</body>
+</html>

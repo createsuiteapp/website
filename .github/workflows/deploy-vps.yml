@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     env:
       VPS_USER: ${{ secrets.VPS_USER }}
@@ -24,21 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-        env:
-          PUBLIC_KEYSTATIC_GITHUB_CLIENT_ID: ${{ secrets.KEYSTATIC_GITHUB_CLIENT_ID }}
-          PUBLIC_KEYSTATIC_GITHUB_CLIENT_SECRET: ${{ secrets.KEYSTATIC_GITHUB_CLIENT_SECRET }}
 
       - name: Validate secrets
         run: |
