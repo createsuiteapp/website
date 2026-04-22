@@ -54,7 +54,7 @@ collections:
                 name: stats
                 widget: list
                 fields:
-                  - { label: Valor (ex: +100), name: value, widget: string }
+                  - { label: "Valor (ex: +100)", name: value, widget: string }
                   - { label: Rótulo, name: label, widget: string }
               - { label: Depoimento, name: testimonial, widget: string }
               - { label: Texto do Botão, name: ctaText, widget: string }
