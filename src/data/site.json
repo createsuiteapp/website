@@ -1,0 +1,72 @@
+{
+  "hero": {
+    "badge": "Laboratório de Inovação Contínua",
+    "headline": "Soluções Úteis para",
+    "headlineHighlight": "Vários Negócios",
+    "description": "CreateSuite não é apenas uma suíte, é um laboratório focado em desenvolver ferramentas independentes e poderosas para diversos tipos de negócios. Descubra soluções projetadas para máxima performance.",
+    "ctaPrimary": { "text": "Explorar CS Toolbox Grátis", "url": "https://toolbox.createsuite.app" },
+    "ctaSecondary": { "text": "Ver Aplicações", "url": "#ecossistema" }
+  },
+  "toolbox": {
+    "sectionTitle": "Apoiado por uma",
+    "sectionTitleHighlight": "Comunidade",
+    "sectionTitle2": "de Especialistas",
+    "description": "No coração da CreateSuite está o CS Toolbox. Nós o construímos para ser o padrão ouro em utilitários web diários. Hoje, é a escolha número um para desenvolvedores, designers e criadores de conteúdo que valorizam seu tempo.",
+    "features": [
+      {
+        "title": "Coleção Crescente de Ferramentas",
+        "description": "De formatadores de código a geradores de dados, tudo em um só lugar sem precisar instalar nada."
+      },
+      {
+        "title": "100% Gratuito",
+        "description": "Acreditamos na honestidade e uso responsável pela comunidade. Sem paywalls escondidos."
+      },
+      {
+        "title": "Construído para Performance",
+        "description": "Execução no lado do cliente sempre que possível, garantindo velocidade e privacidade para seus dados."
+      }
+    ],
+    "stats": [
+      { "value": "+100", "label": "Ferramentas Ativas" },
+      { "value": "0ms", "label": "Atraso de Configuração" }
+    ],
+    "testimonial": "Configurei como minha página inicial no navegador.",
+    "ctaText": "Acessar CS Toolbox Agora",
+    "ctaUrl": "https://toolbox.createsuite.app"
+  },
+  "ecosystem": {
+    "sectionTitle": "Soluções",
+    "sectionTitleHighlight": "CreateSuite",
+    "description": "O laboratório não para. Conheça as aplicações desenvolvidas para cobrir necessidades específicas de diversos tipos de negócios."
+  },
+  "apps": [
+    {
+      "id": "leads",
+      "name": "CS Leads",
+      "description": "CRM inteligente com prospecção via Google Maps, captura via API para alto volume e controle completo do funil de vendas.",
+      "url": "https://leads.createsuite.app",
+      "color": "blue"
+    },
+    {
+      "id": "office",
+      "name": "CS Office",
+      "description": "Escritório virtual completo para profissionais liberais. Inclui secretária virtual (Bot), emissão de NFS-e, agendamento e automações.",
+      "url": "https://office.createsuite.app",
+      "color": "emerald"
+    },
+    {
+      "id": "cowork",
+      "name": "CS Cowork",
+      "description": "Gestão completa para Espaços de Coworking. Controle de espaços, reservas online, interface para totens internos, mural e portal de membros.",
+      "url": "https://cowork.createsuite.app",
+      "color": "sky"
+    },
+    {
+      "id": "codeviewr",
+      "name": "CodeViewr",
+      "description": "Editor HTML, CSS e JavaScript online. Simplifique o processo de desenvolvimento e testes de código front-end em tempo real.",
+      "url": "https://codeviewr.app",
+      "color": "fuchsia"
+    }
+  ]
+}

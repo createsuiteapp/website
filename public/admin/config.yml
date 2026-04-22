@@ -1,0 +1,79 @@
+backend:
+  name: github
+  repo: createsuiteapp/website
+  branch: main
+  base_url: https://oauth.createsuite.app
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: settings
+    label: Configurações do Site
+    files:
+      - name: home
+        label: Página Inicial
+        file: src/data/site.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Badge, name: badge, widget: string }
+              - { label: Título (parte 1), name: headline, widget: string }
+              - { label: Título (destaque em verde), name: headlineHighlight, widget: string }
+              - { label: Descrição, name: description, widget: text }
+              - label: Botão Principal
+                name: ctaPrimary
+                widget: object
+                fields:
+                  - { label: Texto, name: text, widget: string }
+                  - { label: URL, name: url, widget: string }
+              - label: Botão Secundário
+                name: ctaSecondary
+                widget: object
+                fields:
+                  - { label: Texto, name: text, widget: string }
+                  - { label: URL, name: url, widget: string }
+
+          - label: Seção CS Toolbox
+            name: toolbox
+            widget: object
+            fields:
+              - { label: Título (parte 1), name: sectionTitle, widget: string }
+              - { label: Título (destaque), name: sectionTitleHighlight, widget: string }
+              - { label: Título (parte 3), name: sectionTitle2, widget: string }
+              - { label: Descrição, name: description, widget: text }
+              - label: Funcionalidades
+                name: features
+                widget: list
+                fields:
+                  - { label: Título, name: title, widget: string }
+                  - { label: Descrição, name: description, widget: text }
+              - label: Estatísticas
+                name: stats
+                widget: list
+                fields:
+                  - { label: Valor (ex: +100), name: value, widget: string }
+                  - { label: Rótulo, name: label, widget: string }
+              - { label: Depoimento, name: testimonial, widget: string }
+              - { label: Texto do Botão, name: ctaText, widget: string }
+              - { label: URL do Botão, name: ctaUrl, widget: string }
+
+          - label: Seção Ecossistema
+            name: ecosystem
+            widget: object
+            fields:
+              - { label: Título (parte 1), name: sectionTitle, widget: string }
+              - { label: Título (destaque), name: sectionTitleHighlight, widget: string }
+              - { label: Descrição, name: description, widget: text }
+
+          - label: Aplicações
+            name: apps
+            widget: list
+            fields:
+              - { label: ID (não alterar), name: id, widget: string }
+              - { label: Nome, name: name, widget: string }
+              - { label: Descrição, name: description, widget: text }
+              - { label: URL, name: url, widget: string }
+              - { label: Cor (blue/emerald/sky/fuchsia), name: color, widget: string }

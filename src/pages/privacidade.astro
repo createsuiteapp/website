@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const date = new Date().toLocaleDateString('pt-BR');
+---
+
+<Base title="Política de Privacidade | CreateSuite">
+  <Nav />
+
+  <section class="relative pt-32 pb-12 overflow-hidden border-b border-white/5">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Política de Privacidade</h1>
+      <p class="text-slate-400">Última atualização: {date}</p>
+    </div>
+  </section>
+
+  <section class="py-12 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-panel p-8 md:p-12 rounded-2xl border border-white/10 prose prose-invert max-w-none">
+        <p>A sua privacidade é importante para nós. É política do CreateSuite respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site CreateSuite, e outros sites que possuímos e operamos, incluindo CS Toolbox, CS Leads, CS Office e CS Cowork.</p>
+
+        <h2>1. Informações que coletamos</h2>
+        <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. As informações coletadas podem incluir:</p>
+        <ul>
+          <li><strong>Dados de Identificação:</strong> Nome, endereço de e-mail e dados de contato quando você se registra em nossas plataformas.</li>
+          <li><strong>Dados de Uso e Cookies:</strong> Informações sobre como você interage com nossos sites e ferramentas para fins de análise de desempenho e melhorias.</li>
+          <li><strong>Dados Inseridos:</strong> Dados processados no CS Toolbox (nota: priorizamos processamento <em>client-side</em> para garantir que dados sensíveis não sejam armazenados em nossos servidores sempre que possível).</li>
+        </ul>
+
+        <h2>2. Como usamos suas informações</h2>
+        <p>Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, os protegemos dentro de meios comercialmente aceitáveis para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
+        <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei ou estritamente necessário para a prestação dos serviços.</p>
+
+        <h2>3. Cookies e Tecnologias de Rastreamento</h2>
+        <p>Utilizamos cookies para melhorar a sua experiência em nossos sites. Você pode configurar ou recusar os cookies a qualquer momento através do nosso painel de preferências. Utilizamos os seguintes tipos:</p>
+        <ul>
+          <li><strong>Estritamente Necessários:</strong> Para o funcionamento básico da plataforma.</li>
+          <li><strong>Desempenho e Analíticos:</strong> Para entender o tráfego e melhorar a performance das ferramentas.</li>
+          <li><strong>Marketing:</strong> Para campanhas de publicidade direcionadas, caso você tenha consentido.</li>
+        </ul>
+
+        <h2>4. Seus Direitos</h2>
+        <p>Você é livre para recusar a nossa solicitação de informações pessoais. Você também tem o direito de solicitar o acesso, retificação ou exclusão de seus dados a qualquer momento, entrando em contato através da nossa <a href="/contato" class="text-primary hover:underline">página de contato</a>.</p>
+
+        <h2>5. Links de Terceiros</h2>
+        <p>O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.</p>
+
+        <h2>6. Aceitação destes termos</h2>
+        <p>O uso continuado de nosso site e ferramentas será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida, entre em contato conosco.</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>
